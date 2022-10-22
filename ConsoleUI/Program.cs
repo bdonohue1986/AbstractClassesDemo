@@ -10,6 +10,29 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+
+           var vehicles = new List<Vehicle>();
+
+            Cars Ford = new Cars() { HasTrunk = true, Make = "Ford", Model = "F-150", Year = 2020 };
+            vehicles.Add(Ford);
+            Cars GMC = new Cars() { HasTrunk = true, Make = "Saturn", Model = "Saturn", Year = 1999 };
+            vehicles.Add(GMC);
+            Motorcycles Harley = new Motorcycles() { Year = 2019, Model = "harley", Make = "Harley", Has2wheels = true, HasSideCar = false };
+            vehicles.Add(Harley);
+            Vehicle pickup = new Cars() { Make = "Toyota", Model = "Tundra", HasTrunk = false, Year = 2017 };
+            vehicles.Add(pickup);
+            Vehicle Yamaha = new Motorcycles() { Year = 2022, Make =  "Yamaha", Model = "unknown", HasSideCar = true  };
+            vehicles.Add(Yamaha);
+          
+
+            foreach(var vehicle in vehicles)
+            {
+                Console.WriteLine($"This {vehicle.Year}  {vehicle.Make}  {vehicle.Model} is about to take off. ");
+                vehicle.DriveVirtual();
+                vehicle.Drive();
+                Console.WriteLine();
+            }
+
             /*
              * Todo follow all comments!! 
              */
